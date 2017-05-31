@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+def version = '1.0.0'
 
 android {
     compileSdkVersion 25
@@ -8,10 +11,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        versionName "$version"
     }
     buildTypes {
         release {
@@ -21,11 +21,16 @@ android {
     }
 }
 
+publish {
+    groupId = 'su.ias.components'
+    artifactId = 'progress-android'
+    publishVersion = "$version"
+    repoName = 'maven'
+    desc = 'progress views for Android development'
+    licences = ['MIT']
+    website = 'https://github.com/interactiveservices/progress-android'
+}
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
     compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
 }
