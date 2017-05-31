@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="progressThickness" format="dimension" />
+    <attr name="progressColor" format="color" />
+
+    <declare-styleable name="ProgressButtonView">
+        <attr name="progressBackgroundTint" format="color" />
+        <attr name="successBackgroundTint" format="color" />
+        <attr name="errorBackgroundTint" format="color" />
+        <attr name="progressThickness"/>
+        <attr name="progressColor"/>
+        <attr name="drawablePadding" format="dimension" />
+        <attr name="successDrawable" format="reference" />
+        <attr name="errorDrawable" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialProgressView">
+        <attr name="autoStart" format="boolean" />
+        <attr name="thickness" format="dimension"/>
+        <attr name="color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressView">
+        <attr name="backgroundThickness" format="dimension" />
+        <attr name="progressThickness"/>
+        <attr name="bgColor" format="color" />
+        <attr name="progressColor"/>
+        <attr name="maxProgress" format="integer" />
+        <attr name="progress" format="integer" />
+        <attr name="pin" format="integer"/>
+        <attr name="startAngle" format="float" />
+    </declare-styleable>
+</resources>

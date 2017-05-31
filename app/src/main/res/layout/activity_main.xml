@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!" />
+
+        <su.ias.components.progress.ProgressButtonView
+            android:id="@+id/btn_sample"
+            android:layout_width="206dp"
+            android:layout_height="56dp"
+            android:text="Sample"
+            app:progressBackgroundTint="#22f102"
+            app:progressColor="#e2000f" />
+
+        <su.ias.components.progress.MaterialProgressView
+            android:id="@+id/pprogress"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:color="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/btn_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start\\Stop" />
+
+        <su.ias.components.progress.CircleProgressView
+            android:id="@+id/pView"
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
+
+        <Button
+            android:id="@+id/bnt_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start\\Stop" />
+    </LinearLayout>
+</ScrollView>
