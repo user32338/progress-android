@@ -66,9 +66,9 @@ public class ProgressButtonView extends AppCompatButton {
         if (attrs != null) {
 
             TypedArray typedArray = getContext().obtainStyledAttributes(attrs,
-                                                                   R.styleable.ProgressButtonView,
-                                                                   defStyleAttr,
-                                                                   0);
+                                                                        R.styleable.ProgressButtonView,
+                                                                        defStyleAttr,
+                                                                        0);
 
             try {
 
@@ -285,11 +285,22 @@ public class ProgressButtonView extends AppCompatButton {
 
     static class SavedState extends BaseSavedState {
 
+        public static final Parcelable.Creator<SavedState> CREATOR =
+                new Parcelable.Creator<SavedState>() {
+                    public SavedState createFromParcel(Parcel in) {
+                        return new SavedState(in);
+                    }
+
+                    public SavedState[] newArray(int size) {
+                        return new SavedState[size];
+                    }
+                };
+
         private State state;
 
-        public SavedState(Parcel source) {
-            super(source);
-            state = State.valueOf(source.readString());
+        public SavedState(Parcel in) {
+            super(in);
+            state = State.valueOf(in.readString());
         }
 
         public SavedState(Parcelable superState) {
