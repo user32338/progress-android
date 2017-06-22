@@ -72,7 +72,7 @@ public class MaterialProgressView extends View {
 
             color = a.getColor(R.styleable.MaterialProgressView_color, Color.RED);
             //@formatter:off
-            thickness = a.getInt(
+            thickness = a.getDimensionPixelSize(
                     R.styleable.MaterialProgressView_thickness,
                     (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 3,
                                                     getResources().getDisplayMetrics()));

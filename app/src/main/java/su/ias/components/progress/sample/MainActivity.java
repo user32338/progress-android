@@ -86,8 +86,10 @@ public class MainActivity extends AppCompatActivity {
         if (button.isProgress()) {
             button.showSuccess();
         } else if (button.isError()) {
+            button.setText("is OK");
             button.preventDefault();
         } else if (button.isSuccess()) {
+            button.setText("SUCCESS");
             button.showError();
         } else {
             button.showProgress();
