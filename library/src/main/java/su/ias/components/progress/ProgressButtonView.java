@@ -91,7 +91,7 @@ public class ProgressButtonView extends AppCompatButton {
                                             Color.GREEN);
 
                 mErrorBackground =
-                        typedArray.getColor(R.styleable.ProgressButtonView_successBackgroundTint,
+                        typedArray.getColor(R.styleable.ProgressButtonView_errorBackgroundTint,
                                             Color.RED);
 
                 mProgressBackground =
