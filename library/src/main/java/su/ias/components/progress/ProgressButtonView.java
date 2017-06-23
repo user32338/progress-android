@@ -106,8 +106,7 @@ public class ProgressButtonView extends AppCompatButton {
                         typedArray.getResourceId(R.styleable.ProgressButtonView_errorDrawable,
                                                  android.R.drawable.ic_dialog_alert);
 
-                mBackgroundDrawable =
-                        typedArray.getDrawable(R.styleable.ProgressButtonView_android_background);
+
 
             } finally {
                 typedArray.recycle();
@@ -134,6 +133,8 @@ public class ProgressButtonView extends AppCompatButton {
                     idleText = s;
             }
         });
+
+        mBackgroundDrawable = getBackground().mutate();
     }
 
     public void showProgress() {
@@ -261,7 +262,6 @@ public class ProgressButtonView extends AppCompatButton {
     }
 
     private void setBackgroundTintColor(@ColorInt int color) {
-       // this.setBackgroundColor(color);
         this.setBackgroundDrawable(new ColorDrawable(color));
     }
 
