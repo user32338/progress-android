@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -106,6 +106,9 @@ public class ProgressButtonView extends AppCompatButton {
                         typedArray.getResourceId(R.styleable.ProgressButtonView_errorDrawable,
                                                  android.R.drawable.ic_dialog_alert);
 
+                mBackgroundDrawable =
+                        typedArray.getDrawable(R.styleable.ProgressButtonView_android_background);
+
             } finally {
                 typedArray.recycle();
             }
@@ -131,8 +134,6 @@ public class ProgressButtonView extends AppCompatButton {
                     idleText = s;
             }
         });
-
-        mBackgroundDrawable = getBackground();
     }
 
     public void showProgress() {
@@ -190,7 +191,7 @@ public class ProgressButtonView extends AppCompatButton {
     public void preventDefault() {
         state = State.IDLE;
         this.setText(idleText);
-        mBackgroundDrawable.clearColorFilter();
+        this.setBackgroundDrawable(mBackgroundDrawable);
         if (progressDrawable != null) {
             progressDrawable.stop();
         }
@@ -260,8 +261,8 @@ public class ProgressButtonView extends AppCompatButton {
     }
 
     private void setBackgroundTintColor(@ColorInt int color) {
-        mBackgroundDrawable.clearColorFilter();
-        mBackgroundDrawable.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
+       // this.setBackgroundColor(color);
+        this.setBackgroundDrawable(new ColorDrawable(color));
     }
 
     private void setCustomBounds(Drawable drawable) {

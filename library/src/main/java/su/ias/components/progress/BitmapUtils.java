@@ -14,7 +14,7 @@ import android.support.v4.content.ContextCompat;
  * Created on 5/25/17.
  */
 
-public class BitmapUtils {
+class BitmapUtils {
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private static Bitmap getBitmap(VectorDrawable vectorDrawable) {
@@ -27,7 +27,7 @@ public class BitmapUtils {
         return bitmap;
     }
 
-    public static Bitmap getBitmap(Context context, int drawableId) {
+    static Bitmap getBitmap(Context context, int drawableId) {
 
         Drawable drawable = ContextCompat.getDrawable(context, drawableId);
         if (drawable instanceof BitmapDrawable)

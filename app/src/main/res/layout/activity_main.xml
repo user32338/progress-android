@@ -22,7 +22,9 @@
             android:layout_width="206dp"
             android:layout_height="56dp"
             android:text="Sample"
+            android:background="@color/colorPrimary"
             app:progressBackgroundTint="#22f102"
+            app:successBackgroundTint="#4b6297"
             app:progressColor="#e2000f" />
 
         <su.ias.components.progress.MaterialProgressView
